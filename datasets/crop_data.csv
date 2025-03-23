@@ -1,0 +1,5 @@
+land,water,soil,state,district,country,crop1,crop2,crop3,land1,land2,land3,cost1,cost2,cost3,estimated_earning
+5,Abundant,Clay,Karnataka,Bangalore,India,Wheat,Rice,Maize,2,2,1,10000,12000,8000,50000
+10,Moderate,Loam,Tamil Nadu,Chennai,India,Corn,Sugarcane,Barley,4,3,3,15000,14000,10000,70000
+8,Less,Sandy,Uttar Pradesh,Lucknow,India,Millet,Cotton,Jowar,3,3,2,12000,11000,9000,60000
+15,Abundant,Silty,Maharashtra,Pune,India,Rice,Soybean,Groundnut,6,5,4,20000,18000,15000,90000

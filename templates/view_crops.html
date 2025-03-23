@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Crops for Sale</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="vendor-page">
+    <div class="container">
+        <h1 class="animated-heading">🌾 Available Crops for Sale</h1>
+
+        {% if crops %}
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Crop Name</th>
+                            <th>Quantity (kg)</th>
+                            <th>Price (₹ per kg)</th>
+                            <th>Farmer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for crop in crops %}
+                        <tr>
+                            <td>{{ crop.name }}</td>
+                            <td>{{ crop.quantity }}</td>
+                            <td>₹{{ crop.price }}</td>
+                            <td>{{ crop.farmer_name }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <p class="no-data">🚜 No crops available for sale at the moment.</p>
+        {% endif %}
+
+        <a href="{{ url_for('vendor') }}" class="back-button">⬅ Back</a>
+    </div>
+</body>
+</html>

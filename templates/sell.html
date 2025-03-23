@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Crops</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="farmer-page">
+    <div class="container">
+        <h1 class="animated-heading">🌾 Sell Your Crops</h1>
+        
+        <form action="{{ url_for('sell') }}" method="POST">
+            <label for="farmer_name">Farmer Name:</label>
+            <input type="text" name="farmer_name" required>
+
+            <label for="crop_name">Crop Name:</label>
+            <input type="text" name="crop_name" required>
+
+            <label for="quantity">Quantity (kg):</label>
+            <input type="number" name="quantity" required>
+
+            <label for="price">Price (₹ per kg):</label>
+            <input type="number" name="price" step="0.01" required>
+
+            <button type="submit">🌱 Sell</button>
+        </form>
+
+        <h2 class="animated-heading">📌 Vendor Requirements</h2>
+        <table class="styled-table">
+            <tr>
+                <th>Vendor Name</th>
+                <th>Crop Name</th>
+                <th>Required Quantity (kg)</th>
+                <th>Max Price (₹ per kg)</th>
+            </tr>
+            {% for req in vendor_requirements %}
+            <tr>
+                <td>{{ req.vendor_name }}</td>
+                <td>{{ req.crop_name }}</td>
+                <td>{{ req.quantity }}</td>
+                <td>₹{{ req.max_price }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <a href="{{ url_for('vendor') }}" class="back-button">⬅ Back</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Requirements</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="vendor-page post-requirements-page">
+    <div class="background"></div> <!-- Animated background -->
+    <div class="glass-container fade-in">
+        <h1>Post Crop Requirements</h1>
+        <form action="{{ url_for('post_requirements') }}" method="POST">
+            <label>Vendor Name:</label>
+            <input type="text" name="vendor_name" required placeholder="Enter your name">
+
+            <label>Crop Name:</label>
+            <input type="text" name="crop_name" required placeholder="Enter crop name">
+
+            <label>Required Quantity (kg):</label>
+            <input type="number" name="quantity" required placeholder="Enter quantity">
+
+            <label>Maximum Price per kg (₹):</label>
+            <input type="number" name="max_price" step="0.01" required placeholder="Enter max price">
+
+            <button type="submit" class="btn glow">Post Requirement</button>
+        </form>
+        <a href="{{ url_for('vendor') }}" class="back">Back</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Prediction</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="farmer-page">
+    <div class="container">
+        <h1 class="animated-heading">🌱 Crop Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="land">Land Size (in acres):</label>
+            <input type="number" name="land" step="0.1" required>
+
+            <label for="water">Water Availability:</label>
+            <select name="water" required>
+                <option value="Abundant">Abundant</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Less">Less</option>
+            </select>
+
+            <label for="soil">Soil Type:</label>
+            <select name="soil" required>
+                <option value="Clay">Clay</option>
+                <option value="Loam">Loam</option>
+                <option value="Sandy">Sandy</option>
+                <option value="Silty">Silty</option>
+            </select>
+
+            <label for="state">State:</label>
+            <select name="state" required>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+            </select>
+
+            <label for="district">District:</label>
+            <select name="district" required>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Lucknow">Lucknow</option>
+                <option value="Pune">Pune</option>
+            </select>
+
+            <label for="country">Country:</label>
+            <select name="country" required>
+                <option value="India">India</option>
+            </select>
+
+            <button type="submit">🌾 Predict Crops</button>
+        </form>
+
+        {% if plans %}
+        <h2 class="animated-heading">🌟 Recommended Crop Plans</h2>
+        <div class="plans-container">
+            <div class="plan">
+                <h3>🌾 Plan 1</h3>
+                <p><strong>Crops:</strong> {{ plans[0].crops }}</p>
+                <p><strong>Land Allocation:</strong> {{ plans[0].land }} acres</p>
+                <p><strong>Cost:</strong> ₹{{ plans[0].total_cost }}</p>
+                <p><strong>Estimated Earnings:</strong> ₹{{ plans[0].total_earning }}</p>
+                <p><strong>Net Profit:</strong> ₹{{ plans[0].net_profit }}</p>
+                <p><strong>Risk Factor:</strong> {{ plans[0].risk }}%</p>
+            </div>
+
+            <div class="plan">
+                <h3>🌾 Plan 2</h3>
+                <p><strong>Crops:</strong> {{ plans[1].crops }}</p>
+                <p><strong>Land Allocation:</strong> {{ plans[1].land }} acres</p>
+                <p><strong>Cost:</strong> ₹{{ plans[1].total_cost }}</p>
+                <p><strong>Estimated Earnings:</strong> ₹{{ plans[1].total_earning }}</p>
+                <p><strong>Net Profit:</strong> ₹{{ plans[1].net_profit }}</p>
+                <p><strong>Risk Factor:</strong> {{ plans[1].risk }}%</p>
+            </div>
+
+            <div class="plan">
+                <h3>🌾 Plan 3</h3>
+                <p><strong>Crops:</strong> {{ plans[2].crops }}</p>
+                <p><strong>Land Allocation:</strong> {{ plans[2].land }} acres</p>
+                <p><strong>Cost:</strong> ₹{{ plans[2].total_cost }}</p>
+                <p><strong>Estimated Earnings:</strong> ₹{{ plans[2].total_earning }}</p>
+                <p><strong>Net Profit:</strong> ₹{{ plans[2].net_profit }}</p>
+                <p><strong>Risk Factor:</strong> {{ plans[2].risk }}%</p>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

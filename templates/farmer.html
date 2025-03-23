@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="farmer-page">
+    <div class="background"></div>
+    <div class="glass-container">
+        <h1 class="fade-in">Farmer Portal</h1>
+        <div class="buttons">
+            <a href="{{ url_for('predict') }}" class="floating-btn farmer-btn" title="Predict best crops based on conditions">Predict Crops</a>
+            <a href="{{ url_for('sell') }}" class="floating-btn farmer-btn" title="Sell your harvested crops">Sell Crops</a>
+        </div>
+        <a href="{{ url_for('home') }}" class="back slide-up">Back to Home</a>
+    </div>
+</body>
+</html>

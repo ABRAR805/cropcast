@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="vendor-page">  <!-- Background applied -->
+
+    <!-- Main Glassmorphic Container -->
+    <div class="glass-container">
+        <h1 class="animated-heading">Vendor Portal</h1>
+
+        <!-- Navigation Buttons -->
+        <div class="button-container">
+            <a href="{{ url_for('view_crops') }}" class="floating-btn farmer-btn"> View Crops for Sale</a>
+            <a href="{{ url_for('post_requirements') }}" class="floating-btn vendor-btn">📜 Post Crop Requirements</a>
+        </div>
+
+        <!-- Back Button -->
+        <a href="{{ url_for('home') }}" class="back-btn">⬅ Back to Home</a>
+    </div>
+
+</body>
+</html>

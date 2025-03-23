@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropCast Home</title>
+
+    <!-- Linking the external CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="farmer-page">  <!-- This will apply the background image -->
+
+    <!-- Main Glassmorphic Container -->
+    <div class="glass-container">
+        <!-- Title Section -->
+        <h1 class="animated-heading">Welcome to CropCast</h1>
+
+        <!-- Navigation Buttons -->
+        <div class="button-container">
+            <a href="{{ url_for('farmer') }}" class="floating-btn farmer-btn">Farmer</a>
+            <a href="{{ url_for('vendor') }}" class="floating-btn vendor-btn">Vendor</a>
+            <a href="{{ url_for('market_prices') }}" class="floating-btn market-btn">Market Prices</a>
+            <a href="{{ url_for('farmer_groups') }}" class="floating-btn group-btn">Farmer Groups</a>
+        </div>
+    </div>
+
+</body>
+</html>
